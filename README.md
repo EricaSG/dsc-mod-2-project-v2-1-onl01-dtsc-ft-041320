@@ -1,5 +1,5 @@
 ## Module 2 Project
-This is the second project which consists of Data Analysis on the Kings County Reality Dataset creating a meaning insightful and predicting the prices of the houses in King County  by deriving Linear Regression and creating Models to analyse which feature of the house could substantially create a great increase in the prices of the houses. This project is aimed to assist to the Real Estate companies and aiding the other Real Estate Companies in deciding what factors could determining and setting up the prices of the houses in King County.
+This is the second project which consists of Data Analysis on the Kings County Reality Dataset creating meaningful insights and predicting the prices of the houses in King County by applying Linear Regression and creating models to analyze which features of the house could create a substabtial increase in the price of houses. This project is aimed to assist to the Real Estate companies in advising buyers and sellers in deciding what factors could determine the sale price of houses in King County.
 
 #### Non-Technical Presentation: https://youtu.be/Dsamhz7xjs4
 #### Blog: https://medium.com/@gabriel.erica3/9-ways-companies-can-be-actionable-in-the-black-lives-matter-movement-83e9e2058821
