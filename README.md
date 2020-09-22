@@ -20,7 +20,7 @@ This repository consists of the following list of files
 
 ## DATASET
 
-For this project we strictly used a credible dataset to keep it concise and to prevent our data from any other outliers by not deriving any more data through Web Scraping to complete our Linear Regression and predict our Model.
+For this project we used a credible dataset to stay concise and prevent our data from being exposed to additional outliers by not deriving any more data through Web Scraping to complete our Linear Regression and predict our Model.
 
 √ "kc_house_data.csv"
 
@@ -130,19 +130,18 @@ df.shape
 
 ## Exploratory Data Analysis
 
-#### 1.What are the most/least expensive homes based on zipcodes (cheapest area to live in vs most expensive)?
+#### 1. What are the most/least expensive homes based on zipcodes (cheapest area to live in vs most expensive)?
 
 ![image](https://user-images.githubusercontent.com/47164862/83890602-95ef6c00-a711-11ea-9d03-08c141846537.png)
 
 Analysis of EDA::
-~1910 & ~1940's and 2000's are among the highest sold homes.
-Surprisingly yr_build and yr_renovation had correlations of 0.053965 & 0.117858 with the house price
-homes in the 1910's were inspired by the Victotian style architecture. These houses can make a profit by being sold to historical societies or used in movie sets. Renovation is likely negligible because buyers who purchase lived in home probably plan to do renovations of their own, making the current renovations irrelevant
+~1910 & ~1940's and 2000's are among the highest sold homes. Surprisingly yr_build and yr_renovation had correlations of 0.053965 & 0.117858 with the house price
+homes in the 1910's were inspired by the Victotian style architecture. These houses can make a profit by being sold to historical societies or used in movie sets. Renovation is likely negligible because buyers who purchase lived in home probably plan to do renovations of their own, making the current renovations irrelevant.
 
 
 
 
-#### 2.What's the lowest grade/condition with the highest profit and vice versa?
+#### 2. What's the lowest grade/condition with the highest profit and vice versa?
 
 ![image](https://user-images.githubusercontent.com/47164862/83888356-56278500-a70f-11ea-95ee-b29bb70fbc24.png)
 
@@ -152,38 +151,35 @@ homes in the 1910's were inspired by the Victotian style architecture. These hou
 Analysis of EDA::
 
 
-The violin plot and the joint plot plotted above derives clearly that there is clearly a great relationship between the "Grade" of the house and "Price". The houses that yield to the most of the least grade i.e grade 3 is about 260,000, where as when we compare with the Grade 12 house, they yield about 1,500,000 .This clearly depicts that as the grade of the houses goes higher the rate of price goes higher which inturns more profit through the sale of King County residential department.
+The violin plot and the joint plot plotted above derives clearly that there is a great relationship between the "Grade" of the house and "Price". The houses that yield to the most of the least grade i.e grade 3 is about 260,000, where as when we compare with the Grade 12 house, they yield about 1,500,000 .This clearly depicts that as the grade of the houses goes higher the rate of price goes higher which returns more profit through the sale of King's County residential department.
 
 
 
 
-#### 3.Correlation/relationship between yr_built vs grade? (what age is considered vintage/"desirable old"?).
+#### 3. Correlation/relationship between yr_built vs grade? (what age is considered vintage/"desirable old"?).
 
 ![image](https://user-images.githubusercontent.com/47164862/83890276-2c6f5d80-a711-11ea-872a-c5cbed155e3a.png)
 
 Analysis of EDA::
 
-As grade increases, the price of the home increases. Grade and Price had a (positive) correlation coefficient of 0.667964
-Yr_built and grade had a (positive) correlation of 0.447854. This is low. Homes built in the years 1920-1911 had the lowest grades, and lowest average price sold.Homes built in the year 1984-1975 had the highest grades and average home prices.Homes in the 70s are considered vintage
+As the grade increases, the price of the home increases. Grade and Price had a (positive) correlation coefficient of 0.667964 Yr_built and grade had a low (positive) correlation of 0.447854. Homes built in the years 1911-1920 had the lowest grades, and lowest average price sold. Homes built in the years 1975-1984 had the highest grades and average home prices. Therefore homes in the mid 70's to mid-early 80's are considered to be vintage, and desirable to homebuyers.
 
 
 
 
 
 
-####  4.Whats the best month/time of year for buying and selling? (build model to predict year).
+####  4. Whats the best month/time of year for buying and selling? (build model to predict year).
 
 ![image](https://user-images.githubusercontent.com/47164862/83889014-3cd30880-a710-11ea-907c-442b10f555fb.png)
 
 Analysis of EDA::
 
 
-With the help of the plot graph it is clear that the months of the year does effect on the sale of the house and its prices. This plot graph depicts clearly that the peak month for the Selling houses is 'April' on an average of about $560,000 followed by least month for the sale is February with the average sale of $510,000. As we see there is quite a significant amount of drop in the February but then spikes again March and stays consistent till September or October. 
-Based on the data, this graph shows the average sell prices of homes based on the month of the year. The highs and lows range from a price difference of around 10%.  The peak months to sell are March, April, May, and June - we could assuming this is due to tax return season, and end of the public school year.  The low months, being better for buyers, are December, January, and February - which could be explained by the holidays and low average temperatures
+With the help of the plot graph it is clear that the time of the year has an effect on the sale of homes and their prices. This plot graph depicts clearly that the peak month for selling houses is April, on an average of about $560,000 followed by least month for sales is February with an average sale of $510,000. As we see there is quite a significant amount of drop in February, but then spikes again in March and stays consistent until September or October. Based on the data, this graph shows the average sell prices of homes based on the month. The highs and lows range from a price difference of around 10%. The peak months to sell are March, April, May, and June - we could assume that this is due to tax return season, and the end of the public school year. The low months, being better for buyers, are December, January, and February - which could be explained by the holidays and low average temperatures.
 
-
-## Initializing for Modeling
-√. Created a function to highlight the Multicolinearity with the threshold of 0.75
+## Initializing Data for Modeling
+√. Created a function to highlight the Multicolinearity with a threshold of 0.75
 ``` df_corr=df.corr().abs()
 
 # Creating a function to highlight the correlation above the threshold value of 0.75
@@ -292,8 +288,8 @@ print('20-Fold Cross-Validation: ' ,cv_10_results)
 
 #### Interpretation
 
-The final linear regression model predicts that the features that could yield the better prices. * The selected features predicts 61% and 65% of the variance of the target price.The P-value indicates that all relationships aren't random and all feature coefficients reveal positive correlation. With the nature of the data irrespective numerous of modeling it ranges the the R2 value between 55% to 65% . The data results can range low in R2 due to some additional factors like outliers,normalization, multicolinearity.
-Train Mean Squared Error yielded 0.00229 where as Test Mean Squared Error yielded 0.002234 which was 0.00005 difference.
+The final linear regression model predicts that the features that could yield the better prices. * The selected features predicts 61% and 65% of the variance of the target price. The P-value indicates that all relationships aren't random and all feature coefficients reveal positive correlation. With the nature of the data irrespective numerous of modeling it ranges the the R2 value between 55% to 65% . The data results can range low in R2 due to some additional factors like outliers, normalization, multicolinearity.
+The Train Mean Squared Error yielded 0.00229 where as the Test Mean Squared Error yielded 0.002234 which was 0.00005 difference.
 
 #### Y= -7.60*(price) + 1.07*(bedrooms) + 2.94*(bathrooms)+ 4.82*(sqft_living)+ 4.02*(grade)+ 5.54*(yr_built)+ 1.22*(floors)+6.18* (waterfront)
 
@@ -301,20 +297,20 @@ Train Mean Squared Error yielded 0.00229 where as Test Mean Squared Error yielde
 ## Recommendations
 
 √. Increase the size and the number of the bedrooms::
- Based on the demographic area of the house, buyers are more attracted towards the style of the bedrooms and the size of the bedroom. In most cases the bedrooms could be large and just few of them or make a decent sized bedrooms and give more features like the ceiling and lighting fixtures and more autonamious tech that could ease them for opening lights, close the blinds. Designs on the ceiling in the bedroom 
+Based on the demographic area of the house, buyers are more attracted towards the style of the bedrooms and the size of the bedroom. In most cases the bedrooms could be large and just a few of them or make a decent sized bedrooms and give more features like the ceiling and lighting fixtures and smart technology that could automate turning lights off/on, closing blinds, etc.
 
-√. Increase in the size and the number of bathrooms::
-With the high demand of rooms comes a high demand of the bathrooms. If the house is predicted to be built on large scale. It should be an ease of convenience in placing bathrooms in each floor and not necessarily a full bath but could add just half bath. Add little more designed quality bath tubs and faucets.
+√. Increase the size and the number of bathrooms::
+With the high demand of rooms comes a high demand of the bathrooms. If the house is predicted to be built on large scale. Bathrooms should be strategically placed on each floor, and increase the design quality in bathtubs and faucets.
 
 √. Size of the House::
-As we discussed earlier in situations compared to size of the bedrooms, there is high possibilty that buyers would love to maintain square foot living of the house in a ratio to scale manner where all the bedrooms are in one proportion where as the living and dining would make a great difference. Not just living area but also the Patio and Lawn should be given a good amount of area. After all the with the size of house there should be some leisure in the big lawn area.
+As we discussed earlier in situations compared to size of the bedrooms, there is high possibilty that buyers would love to maintain square foot living of the house in a ratio to scale manner where all the bedrooms are in one proportion where as the living and dining would make a great difference. Not just living area but also the Patio and Lawn should be spacious areas for entertaining guests. 
 
 √. Grade and Condition ::-
-Based on the regression these are considered to be the most important features that determines the house prices. There are list of grades that determine whether these are graded with the new stylish models or old school model based on the ranking. So does comes with the condition. Condition of the house determines if the house is in the state of living or not. As we know that the older the homes the conditions gets degraded. Buyers in the market for King County are looking for better quality conditioned houses that not neccessarily are built brand new but would keep it maintained to check for the houses worn and tear condition and update it from time to time.
+Based on the model these are considered to be the most important features that determines the house prices. There are a list of grades that determine whether these are graded with the new stylish models or old school model based on the ranking. So does comes with the condition. Condition of the house determines if the house is in the state of living or not. As we know that the older the homes the conditions gets degraded. Buyers in the market for King County are looking for better quality conditioned houses that not neccessarily are built brand new but would keep it maintained to check for the houses worn and tear condition and update it from time to time.
 
 
 √.  Classify Houses With Vintage:
-It is recommended to suggest the buyers to offer them a competitative better rate when it comes to Vintage Houses that has been taken care for a long period of time.
+It is recommended to suggest the buyers to offer them a competitive better rate when it comes to Vintage Houses that have been consistently  maintained throughout their lifetimes. 
 
 ## Future Work
 As discussed earlier there is great possibilty of outliers, linearity and non-normalized and with the restriction of given time which consices us to give limited result but guide you as one of the best innovative methods to improve the selling prices. But as we continue to build models we can predict best suited houses for the buyers that could potentially be more benefit the firm by analyzing the needs by narrowing the buyers and pin pointing the questions that could yield best houses for the buyers. Also build a model for the sellers and other realty states so that they can predict what prices to be set and what type of houses to build in the upcoming venture based on the demographic area.
